@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.terminal {
+    width: 90%;
+    max-width: 800px;
+    background-color: #2b2b2b;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.terminal-header {
+    background-color: #3c3c3c;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.close {
+    background-color: #ff5f56;
+}
+
+.minimize {
+    background-color: #ffbd2e;
+}
+
+.maximize {
+    background-color: #27c93f;
+}
+
+.terminal-title {
+    color: #ddd;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.terminal-content {
+    padding: 30px;
+    color: #00ff00;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.line {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    padding-left: 10px;
+}
+
+.line:not(.prompt) {
+    padding-left: 25px;
+}
+
+.line:empty,
+.line:contains("-----------------------------------") {
+    margin: 25px 0;
+}
+
+.prompt {
+    color: #00ff00;
+    font-weight: 600;
+    margin-right: 12px;
+    display: inline-block;
+}
+
+.cursor {
+    display: inline-block;
+    position: relative;
+    left: -2px;
+    user-select: none;
+    animation: blink 1s infinite;
+    opacity: 1;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.line:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.terminal-content div:nth-child(odd) {
+    color: #00ff00;
+}
+
+.terminal-content div:nth-child(even) {
+    color: #33ff33;
+}
+
+.command-input {
+    display: inline-block;
+    min-width: 4px;
+    outline: none;
+    color: #00ff00;
+    caret-color: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 80%;
+    vertical-align: bottom;
+}
+
+.cursor {
+    display: inline-block;
+    position: relative;
+    left: -2px;
+    user-select: none;
+    animation: blink 1s infinite;
+    opacity: 1;
+}
+
+/* Move the cursor animation to show/hide via opacity instead of display */
+.command-input:focus + .cursor {
+    opacity: 0;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
